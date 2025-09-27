@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wisecow-deployment # A unique name for the deployment
+spec:
+  replicas: 2 # Run 2 pods of our application for high availability
+  selector:
+    matchLabels:
+      app: wisecow # This label is used by the Service to find the pods
+  template: # This is the blueprint for the pods
+    metadata:
+      labels:
+        app: wisecow # The label for the pods
+    spec:
+      containers:
+      - name: wisecow-container # A name for the container inside the pod
+        image: wisecow:latest # The image we just built
+        imagePullPolicy: Never # IMPORTANT: Use 'Never' because the image is already inside Minikube
+        ports:
+        - containerPort: 4499 # The port your application listens on
