@@ -1,0 +1,32 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"security.kubearmor.com/v1","kind":"KubeArmorPolicy","metadata":{"annotations":{},"name":"wisecow-zero-trust-policy","namespace":"default"},"spec":{"file":{"action":"Block","matchPaths":[{"path":"/etc/passwd","readOnly":true},{"path":"/etc/shadow","readOnly":true}]},"process":{"action":"Allow","matchPaths":[{"path":"/usr/games/fortune"},{"path":"/usr/bin/ncat"}]},"selector":{"matchLabels":{"app":"wisecow"}}}}
+  creationTimestamp: "2025-09-30T00:43:58Z"
+  generation: 1
+  name: wisecow-zero-trust-policy
+  namespace: default
+  resourceVersion: "1881"
+  uid: 5fe2ccbe-0a3a-4858-8235-b17921399532
+spec:
+  file:
+    action: Block
+    matchPaths:
+    - path: /etc/passwd
+      readOnly: true
+    - path: /etc/shadow
+      readOnly: true
+  process:
+    action: Allow
+    matchPaths:
+    - path: /usr/games/fortune
+    - path: /usr/bin/ncat
+  selector:
+    matchLabels:
+      app: wisecow
+status:
+  process:
+    allowed: 50
+    blocked: 25

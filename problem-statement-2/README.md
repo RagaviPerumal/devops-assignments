@@ -2,7 +2,7 @@
 
 This folder contains two Python scripts for monitoring system and application health.
 
-## 1. System Health Monitor
+1. System Health Monitor
 
 This script monitors CPU, memory, and disk usage.
 
