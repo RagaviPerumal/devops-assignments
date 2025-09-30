@@ -1,5 +1,4 @@
 # Problem Statement 3: Runtime Security with KubeArmor
-
 This directory contains the solution for implementing runtime security on a Kubernetes workload using **KubeArmor**.
 
 The primary goal was to create a **zero-trust security policy** that denies all process executions by default and only allows the specific binaries required for the "Wisecow" application to function.
@@ -27,4 +26,5 @@ The primary goal was to create a **zero-trust security policy** that denies all 
     ```bash
     kubectl apply -f ./problem-statement-3/kubearmor-policy.yaml
     ```
+
 
