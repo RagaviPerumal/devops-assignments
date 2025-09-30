@@ -27,3 +27,4 @@ The primary goal was to create a **zero-trust security policy** that denies all 
     ```bash
     kubectl apply -f ./problem-statement-3/kubearmor-policy.yaml
     ```
+
