@@ -5,8 +5,8 @@ metadata:
 spec:
   type: NodePort # Exposes the service on each Node's IP at a static port. Easiest for Minikube.
   selector:
-    app: wisecow # CRITICAL: This must match the 'app' label in your Deployment's pods
+    app: wisecow # This must match the 'app' label in Deployment's pods
   ports:
     - protocol: TCP
       port: 80 # The port the service will be available on inside the cluster
-      targetPort: 4499 # The port to forward traffic to on the container (must match containerPort in Deployment)
+      targetPort: 4499 # The port to forward traffic to on the container 
