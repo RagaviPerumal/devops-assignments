@@ -28,6 +28,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./problem-statement-1  # <-- CHANGE THIS LINE
           push: true
-          tags: ragavi007/wisecow:latest
+          tags: your-dockerhub-username/wisecow:latest
