@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wisecow-container # A name for the container inside the pod
-        image: wisecow:latest # The image we just built
-        imagePullPolicy: Never # IMPORTANT: Use 'Never' because the image is already inside Minikube
+        image: wisecow:latest 
+        imagePullPolicy: Never #  Use 'Never' because the image is already inside Minikube
         ports:
-        - containerPort: 4499 # The port your application listens on
+        - containerPort: 4499 # The port that application listens on
