@@ -1,0 +1,31 @@
+# apiVersion defines the version of the Kubernetes API you're using.
+apiVersion: networking.k8s.io/v1
+# kind specifies the type of object, which is an Ingress.
+kind: Ingress
+# metadata contains data that helps uniquely identify the object, like its name.
+metadata:
+  name: wisecow-ingress
+  # Annotations are used to configure the Ingress controller (e.g., NGINX, Traefik).
+  # This one tells the NGINX Ingress controller how to rewrite the URL path.
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  # rules is a list of routing rules.
+  rules:
+  # Each rule has a host (a domain name). Traffic for this host will be handled by this rule.
+  - host: wisecow.your-cluster.com  # <-- IMPORTANT: Change this to your desired hostname
+    http:
+      # paths is a list of paths within that host.
+      paths:
+      # This rule applies to traffic for the root path "/".
+      - path: /
+        pathType: Prefix
+        # backend defines where to send the traffic that matches this rule.
+        backend:
+          # service specifies the Service to send traffic to.
+          service:
+            # The name of the Service object you created in service.yaml.
+            name: wisecow-service
+            # The port on that Service to send traffic to.
+            port:
+              number: 80
