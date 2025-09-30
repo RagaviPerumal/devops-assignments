@@ -24,4 +24,4 @@ jobs:
         with:
           context: ./problem-statement-3
           push: true
-          tags: ragavi007/kubearmor-app:latest
+          tags: ragavi007/test-app:latest
