@@ -30,4 +30,4 @@ jobs:
         with:
           context: ./problem-statement-1  # <-- CHANGE THIS LINE
           push: true
-          tags: your-dockerhub-username/wisecow:latest
+          tags: ragavi007/wisecow:latest
