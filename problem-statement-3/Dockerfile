@@ -1,5 +1,4 @@
 # File: problem-statement-3/Dockerfile
-
 # Use a lightweight Nginx (web server) image
 FROM nginx:alpine
 
@@ -8,3 +7,4 @@ RUN echo '<h1>Success! The Docker image is running.</h1>' > /usr/share/nginx/htm
 
 # The server will run on port 80
 EXPOSE 80
+
