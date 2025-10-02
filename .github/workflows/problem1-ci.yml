@@ -9,22 +9,17 @@ on:
 # Define the jobs to run
 jobs:
   build-and-push:
-    # Run this job on a fresh Ubuntu virtual machine
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Check out your repository code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Log in to Docker Hub using the secrets we created
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }} 
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Step 3: Build the Docker image and push it to Docker Hub
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
